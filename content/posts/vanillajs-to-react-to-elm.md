@@ -1,6 +1,6 @@
 ---
 title: "Vanillajs to React to Elm"
-date: 2019-05-20T09:18:52-04:00
+date: 2018-11-23
 toc: false
 tags:
   - elm
