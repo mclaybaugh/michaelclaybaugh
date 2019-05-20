@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+
+<meta itemprop="name" content="Minesweeper Using React Hooks">
+<meta itemprop="description" content="I created minesweeper using React and Parcel. Check it out!
+The goals of this implementation were as follows:
+ Use React and React hooks Keep the dependencies and build process as simple as possible  State management in React As I began working on the project, I started using the ‘useState’ hook and then shortly after upgraded to ‘useReducer’. While this hook was able to do everything I needed for this app, I do not believe that going through the React documentation for hooks is a good way for developers to get introduced to state management.">
+
+
+<meta itemprop="datePublished" content="2019-04-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-04-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="268">
+
+
+
+<meta itemprop="keywords" content="react,parcel,css-grid," />
+<meta property="og:title" content="Minesweeper Using React Hooks" />
+<meta property="og:description" content="I created minesweeper using React and Parcel. Check it out!
+The goals of this implementation were as follows:
+ Use React and React hooks Keep the dependencies and build process as simple as possible  State management in React As I began working on the project, I started using the ‘useState’ hook and then shortly after upgraded to ‘useReducer’. While this hook was able to do everything I needed for this app, I do not believe that going through the React documentation for hooks is a good way for developers to get introduced to state management." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://michaelclaybaugh.com/posts/minesweeper-using-react-hooks/" />
+<meta property="article:published_time" content="2019-04-19T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-19T00:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Minesweeper Using React Hooks"/>
+<meta name="twitter:description" content="I created minesweeper using React and Parcel. Check it out!
+The goals of this implementation were as follows:
+ Use React and React hooks Keep the dependencies and build process as simple as possible  State management in React As I began working on the project, I started using the ‘useState’ hook and then shortly after upgraded to ‘useReducer’. While this hook was able to do everything I needed for this app, I do not believe that going through the React documentation for hooks is a good way for developers to get introduced to state management."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Minesweeper Using React Hooks</title>
+	<link rel="stylesheet" href="https://michaelclaybaugh.com/css/style.min.31706917653d2b9e8410abd431f30ec4359a88a94fc87a63654779d87329edec.css" integrity="sha256-MXBpF2U9K56EEKvUMfMOxDWaiKlPyHpjZUd52HMp7ew=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://michaelclaybaugh.com/">Michael Claybaugh</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://michaelclaybaugh.com/posts/">Posts</a>
+					<a href="https://michaelclaybaugh.com/about/">About</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="mailto:michael.claybaugh@gmail.com" target="_blank" rel="noopener me" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a><a href="https://github.com/mclaybaugh" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://www.linkedin.com/in/michael-claybaugh-4a871898/" target="_blank" rel="noopener me" title="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://michaelclaybaugh.com/posts/">Posts</a></li>
+			<li><a href="https://michaelclaybaugh.com/about/">About</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Apr 19, 2019</span></div>
+				<h1>Minesweeper Using React Hooks</h1>
+			</header>
+			<div class="content">
+				
+
+<p>I created minesweeper using React and Parcel. Check it out!</p>
+
+<p><img src="/images/minesweeper.gif" alt="minesweeper example gif" /></p>
+
+<p>The goals of this implementation were as follows:</p>
+
+<ol>
+<li>Use React and React hooks</li>
+<li>Keep the dependencies and build process as simple as possible</li>
+</ol>
+
+<h2 id="state-management-in-react">State management in React<a href="#state-management-in-react" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>As I began working on the project, I started using the ‘useState’ hook
+and then shortly after upgraded to ‘useReducer’. While this hook was
+able to do everything I needed for this app, I do not believe that
+going through the React documentation for hooks is a good way for
+developers to get introduced to state management. For developers
+looking to get more experience in managing state in applications, I
+would instead recommend looking into <a href="https://elm-lang.org">Elm</a> and
+<a href="https://redux.js.org">Redux</a>. However, it is
+still very early in the life of React hooks. From the features they
+provide while remaining class-free, I think that eventually they will
+be the best method for managing state and side effects in React apps.</p>
+
+<h2 id="building-react-applications">Building React Applications<a href="#building-react-applications" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>To keep the build process simple, I used
+<a href="https://parceljs.org/">Parcel</a>. It worked great,
+although I had some issues with the auto-reloading while developing in
+Vim. For those looking for a no-hassle bundling/build tool, Parcel is
+a solid tool to consider.</p>
+
+<h2 id="next-steps">Next Steps<a href="#next-steps" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Some areas of improvement that I have identified already for this
+implementation include separating out functions from the component
+files into an organized folder structure, and also incorporating
+strategies to enforce the immutability of state variables.</p>
+
+<p>Going forward, I plan on implementing and improving this Minesweeper
+project in various other methods and frameworks, including with React
+and Redux, with Elm, and with Vue.</p>
+
+<p>View this project on GitHub at
+<a href="https://github.com/mclaybaugh/minesweeper-react">https://github.com/mclaybaugh/minesweeper-react</a></p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://michaelclaybaugh.com/tags/react">react</a></span><span class="tag"><a href="https://michaelclaybaugh.com/tags/parcel">parcel</a></span><span class="tag"><a href="https://michaelclaybaugh.com/tags/css-grid">css-grid</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>268 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-04-18 20:00 -0400</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="prev-post" href="https://michaelclaybaugh.com/posts/vanillajs-to-react-to-elm/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Vanillajs to React to Elm</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="https://michaelclaybaugh.com/">Michael Claybaugh</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://michaelclaybaugh.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://michaelclaybaugh.com/js/main.min.784417f5847151f848c339cf0acb13a06cbb648b1483435a28ed4556c4ead69b.js" integrity="sha256-eEQX9YRxUfhIwznPCssToGy7ZIsUg0NaKO1FVsTq1ps="></script>
+
+</body>
+
+</html>

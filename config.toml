@@ -2,6 +2,7 @@ baseURL = "https://michaelclaybaugh.com/"
 languageCode = "en-us"
 title = "Michael Claybaugh"
 theme = "hermit"
+publishDir = "docs"
 
 defaultContentLanguage = "en"
 # enableGitInfo = true

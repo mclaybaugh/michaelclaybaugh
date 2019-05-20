@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Michael Claybaugh</title>
+    <link>https://michaelclaybaugh.com/</link>
+    <description>Recent content on Michael Claybaugh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 20 May 2019 09:38:01 -0400</lastBuildDate>
+    
+	<atom:link href="https://michaelclaybaugh.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://michaelclaybaugh.com/about/</link>
+      <pubDate>Mon, 20 May 2019 09:38:01 -0400</pubDate>
+      
+      <guid>https://michaelclaybaugh.com/about/</guid>
+      <description>I currently work as a web developer in Lynchburg, Virginia.
+Things I like:
+ soccer books math coding coffee tea piano free food  Things I don&amp;rsquo;t like:
+ automatic doors shoes  </description>
+    </item>
+    
+    <item>
+      <title>Minesweeper Using React Hooks</title>
+      <link>https://michaelclaybaugh.com/posts/minesweeper-using-react-hooks/</link>
+      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://michaelclaybaugh.com/posts/minesweeper-using-react-hooks/</guid>
+      <description>I created minesweeper using React and Parcel. Check it out!
+The goals of this implementation were as follows:
+ Use React and React hooks Keep the dependencies and build process as simple as possible  State management in React As I began working on the project, I started using the ‘useState’ hook and then shortly after upgraded to ‘useReducer’. While this hook was able to do everything I needed for this app, I do not believe that going through the React documentation for hooks is a good way for developers to get introduced to state management.</description>
+    </item>
+    
+    <item>
+      <title>Vanillajs to React to Elm</title>
+      <link>https://michaelclaybaugh.com/posts/vanillajs-to-react-to-elm/</link>
+      <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://michaelclaybaugh.com/posts/vanillajs-to-react-to-elm/</guid>
+      <description>Controlling a complicated UI is hard In the interest of simplicity, I have leaned towards writing plain ES5 JavaScript for my web projects. However, it is inevitable that situations arise with more complicated user interfaces where multiple components begin to depend on multiple other components, and writing the logic to control the parts becomes both tedious and prone to errors.
+I encountered a problem like this when making a form where the first two select inputs combined determined which fields would show in the rest of the form.</description>
+    </item>
+    
+    <item>
+      <title>Vim vs Emacs</title>
+      <link>https://michaelclaybaugh.com/posts/vim-vs-emacs/</link>
+      <pubDate>Sat, 18 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://michaelclaybaugh.com/posts/vim-vs-emacs/</guid>
+      <description>I have used Vim on and off for the past few years, and since March of this year I have taken to customizing Vim to make it a great developer environment. Over the last month I started acquainting myself with Emacs for the first time and I used it for a few weeks as my main editor for web development.
+Vim wins As of today, I still prefer Vim.</description>
+    </item>
+    
+  </channel>
+</rss>

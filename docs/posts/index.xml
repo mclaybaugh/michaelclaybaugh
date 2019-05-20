@@ -1,0 +1,248 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on Michael Claybaugh</title>
+		<link>https://michaelclaybaugh.com/posts/</link>
+		<description>Recent content in Posts on Michael Claybaugh</description>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>en-us</language>
+		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+		<lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
+		<atom:link href="https://michaelclaybaugh.com/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Minesweeper Using React Hooks</title>
+			<link>https://michaelclaybaugh.com/posts/minesweeper-using-react-hooks/</link>
+			<pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+			
+			<guid>https://michaelclaybaugh.com/posts/minesweeper-using-react-hooks/</guid>
+			<description>I created minesweeper using React and Parcel. Check it out!
+The goals of this implementation were as follows:
+ Use React and React hooks Keep the dependencies and build process as simple as possible  State management in React As I began working on the project, I started using the ‘useState’ hook and then shortly after upgraded to ‘useReducer’. While this hook was able to do everything I needed for this app, I do not believe that going through the React documentation for hooks is a good way for developers to get introduced to state management.</description>
+			<content type="html"><![CDATA[
+
+<p>I created minesweeper using React and Parcel. Check it out!</p>
+
+<p><img src="/images/minesweeper.gif" alt="minesweeper example gif" /></p>
+
+<p>The goals of this implementation were as follows:</p>
+
+<ol>
+<li>Use React and React hooks</li>
+<li>Keep the dependencies and build process as simple as possible</li>
+</ol>
+
+<h2 id="state-management-in-react">State management in React</h2>
+
+<p>As I began working on the project, I started using the ‘useState’ hook
+and then shortly after upgraded to ‘useReducer’. While this hook was
+able to do everything I needed for this app, I do not believe that
+going through the React documentation for hooks is a good way for
+developers to get introduced to state management. For developers
+looking to get more experience in managing state in applications, I
+would instead recommend looking into <a href="https://elm-lang.org">Elm</a> and
+<a href="https://redux.js.org">Redux</a>. However, it is
+still very early in the life of React hooks. From the features they
+provide while remaining class-free, I think that eventually they will
+be the best method for managing state and side effects in React apps.</p>
+
+<h2 id="building-react-applications">Building React Applications</h2>
+
+<p>To keep the build process simple, I used
+<a href="https://parceljs.org/">Parcel</a>. It worked great,
+although I had some issues with the auto-reloading while developing in
+Vim. For those looking for a no-hassle bundling/build tool, Parcel is
+a solid tool to consider.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Some areas of improvement that I have identified already for this
+implementation include separating out functions from the component
+files into an organized folder structure, and also incorporating
+strategies to enforce the immutability of state variables.</p>
+
+<p>Going forward, I plan on implementing and improving this Minesweeper
+project in various other methods and frameworks, including with React
+and Redux, with Elm, and with Vue.</p>
+
+<p>View this project on GitHub at
+<a href="https://github.com/mclaybaugh/minesweeper-react">https://github.com/mclaybaugh/minesweeper-react</a></p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Vanillajs to React to Elm</title>
+			<link>https://michaelclaybaugh.com/posts/vanillajs-to-react-to-elm/</link>
+			<pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
+			
+			<guid>https://michaelclaybaugh.com/posts/vanillajs-to-react-to-elm/</guid>
+			<description>Controlling a complicated UI is hard In the interest of simplicity, I have leaned towards writing plain ES5 JavaScript for my web projects. However, it is inevitable that situations arise with more complicated user interfaces where multiple components begin to depend on multiple other components, and writing the logic to control the parts becomes both tedious and prone to errors.
+I encountered a problem like this when making a form where the first two select inputs combined determined which fields would show in the rest of the form.</description>
+			<content type="html"><![CDATA[
+
+<p><img src="/images/elm-sample-code.png" alt="Elm sample code" /></p>
+
+<h2 id="controlling-a-complicated-ui-is-hard">Controlling a complicated UI is hard</h2>
+
+<p>In the interest of simplicity, I have leaned towards writing plain
+ES5 JavaScript for my web projects. However, it is inevitable that
+situations arise with more complicated user interfaces where
+multiple components begin to depend on multiple other components,
+and writing the logic to control the parts becomes both tedious and
+prone to errors.</p>
+
+<p>I encountered a problem like this when making a form where the first
+two select inputs combined determined which fields would show in the
+rest of the form. Even for this relatively simple design, I found
+writing the logic to switch the form between the various states to be
+difficult in that I had to account for each possible variation of how
+a user may switch between the states. It became a game of testing the
+form myself and finding all the ways it could break, and then fixing
+them and repeating the process. It was not too difficult to complete,
+but I knew that continued updates and maintenance on that form were
+likely to be mired in danger and unforeseen bugs.</p>
+
+<h2 id="frameworks-exist-for-a-reason">Frameworks exist for a reason</h2>
+
+<p>I know of multiple frameworks that solve this problem, such as React
+and Vue, but want to avoid downloading additional assets and adding
+more requirements to the programming knowledge of future developers.
+I strove to find a solution to this problem using plain JavaScript.</p>
+
+<p>Thus far I have come to the conclusion that the best way to make a UI
+is to declaratively describe how a view should look based on its
+state, and have some mechanism to manipulate the DOM to render the
+view (If you have other clever ideas on how to solve problems like
+this one in vanillaJS, then please let me know).</p>
+
+<p>I went so far as to start a new project on Codepen and write some of
+the state logic, but then quickly realized that the rendering part of
+this solution was fairly involved (creating new DOM elements and
+removing them dynamically), and that was exactly why things like React
+were created.</p>
+
+<p>Next I started looking up more information about Redux as a possible
+state management architecture to emulate, and found it referenced Elm
+as a source of inspiration.</p>
+
+<h2 id="finding-enlightenment">Finding enlightenment</h2>
+
+<p>I looked into Elm, and then my eyes were opened.</p>
+
+<p>In Elm I found a single tool (a language really) that enables (what I
+find to be) elegant solutions to state management, declarative views,
+and static typing. Before Elm, the only way I knew to incorporate
+these features was to use three different tools (React/Vue,
+Redux/Vuex, Typescript/Flow). And the tools I previously was familiar
+with are inspired by functional languages, but are still written in
+JavaScript. Elm provides solutions for all of these and it is a truly
+functional language. It knows the difference between an int and a float.</p>
+
+<p>Because of all of these things, I am excited to dig deeper into the
+Elm language and create some new projects.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Vim vs Emacs</title>
+			<link>https://michaelclaybaugh.com/posts/vim-vs-emacs/</link>
+			<pubDate>Sat, 18 Aug 2018 00:00:00 +0000</pubDate>
+			
+			<guid>https://michaelclaybaugh.com/posts/vim-vs-emacs/</guid>
+			<description>I have used Vim on and off for the past few years, and since March of this year I have taken to customizing Vim to make it a great developer environment. Over the last month I started acquainting myself with Emacs for the first time and I used it for a few weeks as my main editor for web development.
+Vim wins As of today, I still prefer Vim.</description>
+			<content type="html"><![CDATA[
+
+<p><img src="/images/vim-screenshot.png" alt="Vim screenshot" /></p>
+
+<p>I have used Vim on and off for the past few years, and since March
+of this year I have taken to customizing Vim to make it a great
+developer environment. Over the last month I started acquainting
+myself with Emacs for the first time and I used it for a few weeks
+as my main editor for web development.</p>
+
+<h2 id="vim-wins">Vim wins</h2>
+
+<p>As of today, I still prefer Vim.</p>
+
+<p>If I were to describe them both in the same sentence, I would say
+this: &ldquo;Vim does one thing and it does it well; Emacs does all of
+the things.&rdquo;</p>
+
+<ol>
+<li>Vim keeps me in the terminal, while Emacs feels like its own
+thing even though it does include a terminal emulator.</li>
+<li>Vim keeps me on the keyboard, and especially the home row
+as much as possible.</li>
+</ol>
+
+<p>When I first started using Emacs (gui), I liked how it played nice
+with the mouse and the clipboard, and yet it also had a great
+wealth of keyboard shortcuts. I found several of the shortcuts to
+be quicker than the Vim equivalents, such as saving a file.
+The wealth of context-specific modes seemed to also be a great
+feature.</p>
+
+<p>For pure editing, there is also something nice about have just a
+single &ldquo;mode&rdquo; (in Vim speak). You don&rsquo;t always have to switch back
+to normal mode to do a command or move around the file. But this
+feeling did not last long. Just last week I found myself missing
+the Vim interface, and so I started using &ldquo;Evil Mode&rdquo; in emacs.
+&ldquo;Evil&rdquo; stands for Extensible Vi Layer for Emacs, and it is simply
+a minor mode which changes the Emacs interface to emulate Vim as
+closely as possible.</p>
+
+<p>My initial thought was that I had discovered the perfect editor:
+The best of Vim and Emacs in one delicious package. However, I
+found myself constantly switching between Emacs and Vim modes for
+different tasks, and also just having so many keyboard options
+available at the same time seemed more daunting and confusing than
+productive.</p>
+
+<p>Yet the biggest issue I had with Emacs was that while using it,
+I felt disconnected from the terminal. You can open a terminal
+emulater within Emacs, but it is just a window within Emacs. Emacs
+becomes the perspective from which you use the computer, and
+anything you want to do has to be done in the Emacs way.</p>
+
+<p>My favorite thing about Vim is that it shines as being just a
+text editor. When I use Vim, I am really just using the terminal
+and then opening Vim as needed. I can stay in Vim for a little
+while if I want to using NERDTree to navigate the directory tree,
+but I can also quit Vim, get some errands done in the terminal
+and then open up Ranger or whatever else suits my fancy.</p>
+
+<h2 id="what-i-have-learned">What I have learned</h2>
+
+<p>My time using Emacs was well-spent, and I hope to keep it a
+part of my application toolbox. What I plan on doing next is
+adding some additional keybindings to my vimrc (actually the
+neovim equivalent) inspired by Emacs to speed up my actions.</p>
+
+<h2 id="my-current-vim-plugins">My current Vim plugins</h2>
+
+<p>You can also find my entire vimrc file on
+<a href="https://github.com/mclaybaugh/linux-setup">Github</a></p>
+
+<ol>
+<li>Vim-plug (package manager)</li>
+<li>vim-javascript (improved javascript syntax support)</li>
+<li>vim-airline (looks awesome, esp. with patched fonts)</li>
+<li>NERDTree (file navigation and manipulation)</li>
+<li>indentLint (for indent guides with indents as spaces)</li>
+<li>vim-closetag (quick HTML completion)</li>
+<li>syntastic (syntax checking)</li>
+<li>git-gutter, vim-fugitive (awesome git integration)</li>
+<li>YouCompleteMe (autocomplete for days)</li>
+<li>gruvbox (best colorscheme ever)</li>
+<li>vim-sublime-monokai (another good colorscheme)</li>
+</ol>
+
+<ul>
+<li>UPDATE 2019-05-20: My vim plugins are different now, keeping this
+for archival purposes</li>
+</ul>
+]]></content>
+		</item>
+		
+	</channel>
+</rss>

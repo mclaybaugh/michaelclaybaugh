@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Michael Claybaugh</title>
+    <link>https://michaelclaybaugh.com/tags/</link>
+    <description>Recent content in Tags on Michael Claybaugh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://michaelclaybaugh.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>css-grid</title>
+      <link>https://michaelclaybaugh.com/tags/css-grid/</link>
+      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://michaelclaybaugh.com/tags/css-grid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>parcel</title>
+      <link>https://michaelclaybaugh.com/tags/parcel/</link>
+      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://michaelclaybaugh.com/tags/parcel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react</title>
+      <link>https://michaelclaybaugh.com/tags/react/</link>
+      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://michaelclaybaugh.com/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elm</title>
+      <link>https://michaelclaybaugh.com/tags/elm/</link>
+      <pubDate>Fri, 23 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://michaelclaybaugh.com/tags/elm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>editors</title>
+      <link>https://michaelclaybaugh.com/tags/editors/</link>
+      <pubDate>Sat, 18 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://michaelclaybaugh.com/tags/editors/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://michaelclaybaugh.com/tags/vim/</link>
+      <pubDate>Sat, 18 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://michaelclaybaugh.com/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

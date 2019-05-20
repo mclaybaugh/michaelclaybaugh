@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>parcel on Michael Claybaugh</title>
+    <link>https://michaelclaybaugh.com/tags/parcel/</link>
+    <description>Recent content in parcel on Michael Claybaugh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 19 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://michaelclaybaugh.com/tags/parcel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Minesweeper Using React Hooks</title>
+      <link>https://michaelclaybaugh.com/posts/minesweeper-using-react-hooks/</link>
+      <pubDate>Fri, 19 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://michaelclaybaugh.com/posts/minesweeper-using-react-hooks/</guid>
+      <description>I created minesweeper using React and Parcel. Check it out!
+The goals of this implementation were as follows:
+ Use React and React hooks Keep the dependencies and build process as simple as possible  State management in React As I began working on the project, I started using the ‘useState’ hook and then shortly after upgraded to ‘useReducer’. While this hook was able to do everything I needed for this app, I do not believe that going through the React documentation for hooks is a good way for developers to get introduced to state management.</description>
+    </item>
+    
+  </channel>
+</rss>
